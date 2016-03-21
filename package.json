@@ -1,0 +1,14 @@
+{
+  "name": "lost-vikings-remake",
+  "main": "index.html",
+  "private": true,
+  "scripts": {
+    "test": "node compile.js --test & nw ."
+  },
+  "devDependencies": {
+    "concat": "^1.0.0"
+  },
+  "window": {
+    "toolbar": false
+  }
+}
