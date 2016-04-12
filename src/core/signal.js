@@ -56,13 +56,17 @@ Signal.prototype.addOnce = function(callback, callbackContext) {
  * Dispatches the event to all listeners.
  */
 Signal.prototype.dispatch = function() {
+  var _listeners = [];
   for(var a = 0;a < this.listeners.length;a++) {
     var listener = this.listeners[a];
-    listener.callback.apply(listener.callbackContext, listener.args);
+    _listeners.push(listener);
     if(listener.once) {
       this.listeners.splice(a, 1);
       a--;
     }
+  }
+  for(var a = 0;a < _listeners.length;a++) {
+    _listener[a].callback.apply(_listener[a].callbackContext, _listener[a].args);
   }
 };
 

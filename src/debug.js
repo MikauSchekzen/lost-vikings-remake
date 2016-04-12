@@ -1,4 +1,6 @@
 var mainWindow = require("nw.gui").Window.get();
-var debugWindow = mainWindow.showDevTools();
-debugWindow.moveTo(0, 0);
-mainWindow.focus();
+var debugWindow = null;
+// mainWindow.showDevTools(null, function() {
+//   // debugWindow.moveTo(0, 0);
+//   // mainWindow.focus();
+// });

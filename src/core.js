@@ -32,20 +32,24 @@ Core.initMembers = function() {
 Core.initPixi = function() {
   this.renderer = PIXI.autoDetectRenderer(800, 450);
   document.body.appendChild(this.renderer.view);
-  if(this.isNW()) this.resizeWindow();
+  if(this.isNW()) {
+    this.window.on("resize", function(w, h) {
+      Core.window.setPosition("center");
+    });
+    this.resetWindowSize();
+  }
 };
 
 /**
  * Resizes the Node Webkit window.
  */
-Core.resizeWindow = function() {
-  var widthDiff = (this.window.width - this.window.window.innerWidth);
-  var heightDiff = (this.window.height - this.window.window.innerHeight);
+Core.resetWindowSize = function() {
+  var widthDiff = (this.window.window.outerWidth - this.window.window.innerWidth);
+  var heightDiff = (this.window.window.outerHeight - this.window.window.innerHeight);
   this.window.resizeTo(
     this.width + widthDiff,
     this.height + heightDiff
   );
-  this.window.setPosition("center");
 };
 
 /**

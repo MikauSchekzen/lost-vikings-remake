@@ -3,12 +3,9 @@
   "main": "index.html",
   "private": true,
   "scripts": {
-    "test": "node compile.js --test & nw ."
+    "test": "node compile.js -test & nw ."
   },
   "devDependencies": {
-    "concat": "^1.0.0"
-  },
-  "window": {
-    "toolbar": false
+    "concatenate-files": "^0.1.1"
   }
 }
