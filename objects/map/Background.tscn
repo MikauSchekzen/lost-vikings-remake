@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/map/Background.gd" type="Script" id=1]
+
+[node name="Background" type="ParallaxLayer"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 0, 0 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+
